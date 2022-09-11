@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Funtion</title>
+</head>
+<body>
+    
+    <script>
+        //función normal
+        var x = function(a){
+            return a;
+        }
+        console.log(x('Hola'));
+
+        //FAT ARROW with 1 parametres
+        var y = a => a;
+        console.log(y('hola arrow'))
+
+        //FAT ARROW with various parametres
+        var y = (a, b) => a+' '+b;
+        console.log(y('hola', 'varios'))
+
+        //FAT ARROW with not parametres
+        var y = () => 'Arrow sin parámetros';
+        console.log(y())
+
+        ///LLAMAR A LA FUNCIÓN DESDE OTRA FUNCIÓN
+        setTimeout(() => alert('SetTimeOut'), 1000);   
+        
+        var arrowZ = () => {
+            a = 'hola';
+            b = 'arrow Z';
+            alert(a+' '+ b);
+        }
+        arrowZ();
+    </script>
+
+</body>
+</html>
