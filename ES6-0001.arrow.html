@@ -7,7 +7,63 @@
     <title>Arrow Funtion</title>
 </head>
 <body>
+
+    <h1>ARROW FUNCTION</h1>
+
+    <p>
+        También conocidas como funciones lambda, arrow function, o flechas,
+        son abreviaciones de funciones utilizando el operador =>.
+    </p>
+    <p>
+        Es una forma de hacer funciones más compactas en JS
+        ya que permite tener funciones en una sola línea.
+    </p>
     
+    <div>
+        <p>
+       <h3> FUNCIÓN NORMAL</h3>
+        <p>var x = function(a){</p>
+            <p>return a;</p>
+        <p>}</p>
+        <p>console.log(x('Hola'));</p>
+        </p>
+
+
+        <p>
+            <h3>FUNCIÓN FLECHA CON UN PARÁMETRO</h3>
+            <p>var y = a => a;</p>
+            <p>console.log(y('hola arrow'));</p>
+        </p>
+
+        <p>
+            <h3>FUNCIÓN FLECHA CON VARIOS PARÁMETROS</h3>
+            <p>var y = (a, b) => a+' '+b;</p>
+            <p>console.log(y('hola', 'varios'));</p>
+        </p>
+
+        <p>
+            <h3>FUNCIÓN FLECHA SIN PARÁMETROS</h3>
+            <p>var y = () => 'Arrow sin parámetros';</p>
+            <p>console.log(y());</p>
+        </p>
+
+        <p>
+            <h3>LLAMAR A LA FUNCIÓN DESDE OTRA FUNCIÓN</h3>
+            setTimeout(() => alert('SetTimeOut'), 1000);
+        </p>
+
+        <p>
+            <h3> FUNCIÓN FLECHA CON VARIOS PARÁMETROS</h3>
+             <p> var arrowZ = () => {</p>
+                <p>a = 'hola';</p>
+                <P>b = 'arrow Z';</P>
+                <P>alert(a+' '+ b);</P>
+             <p>}</p>
+             <p>arrowZ();</p>
+             </p>
+     
+
+    </div>
     <script>
         //función normal
         var x = function(a){
