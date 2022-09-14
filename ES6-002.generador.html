@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Generadores - Rangos</h1>
+
+        <p>function * rango (inicio, fin, incremento){</p>
+        <p>while(inicio < fin){</p>
+        <p>yield inicio;</p>
+        <p>inicio += incremento;</p>
+        <p>}</p>
+        <p>}</p>
+
+        <p>for(let i of rango(0, 10, 2)){</p>
+        <p> console.log(i);</p>
+        <p>}</p>
+
+        <p class="resultado">RESULTADO</p>
+
+        <h2>Generadores - Cuadrados</h2>
+
+        <p>function* cuadrados(){</p>
+            <p>let n = 1;</p>
+                <p>while(true){</p>
+                 <p>let c = n*n;</p>
+                    <p>n++;</p>
+                    <p>yield c;</p>
+                <p>}</p>
+            <p>}</p>
+
+            <p class="cuadrados">RESULTADO</p>
+
+    <script>
+        function * rango (inicio, fin, incremento){
+            while(inicio < fin){
+                yield inicio;
+                inicio += incremento;
+            }
+        }
+
+        let parrafo1 = document.querySelector(".resultado");
+        let arrRango = [];
+        for(let i of rango(0, 10, 2)){
+            arrRango.push(i);
+            //document.write('<br>'+i+'<br>')
+        }
+        parrafo1.innerHTML = arrRango;
+    </script>
+        
+    <script>
+        function* cuadrados(){
+            let n = 1;
+            while(true){
+                let c = n*n;
+                n++;
+                yield c;
+            }
+        }
+
+        let cuadrado1 = document.querySelector(".cuadrados");
+        var gen = cuadrados();
+        let arrCuadrados = [];
+        arrCuadrados.push(gen.next().value);
+        arrCuadrados.push(gen.next().value);
+        arrCuadrados.push(gen.next().value);
+        arrCuadrados.push(gen.next().value);
+        cuadrado1.innerHTML = arrCuadrados;
+    </script>
+
+
+<script>
+    let fibonacci = {
+        *[Symbol.iterator](){
+            let pre =0, cur = 1
+            for(;;){
+                [pre, cur] = [cur, pre+cur]
+                yield cur
+            }
+        }
+    }
+    for(n of fibonacci){
+        if(n > 1000) break
+            console.log(n)
+    }
+</script>
+</body>
+</html>
